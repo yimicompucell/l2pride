@@ -58,12 +58,12 @@ document.getElementById('jokeBtn').addEventListener('click', function() {
   // Aplicar modo al cargar la página
   applyDarkMode();
 
-  const menuIcon = document.querySelector('.menu-icon');
-const menuDropdown = document.querySelector('.menu-dropdown');
-
-menuIcon.addEventListener('click', () => {
-  menuDropdown.classList.toggle('menu-open');
-});
-
+  const menuButton = document.getElementById('menuButton');
+  const menuDropdown = document.querySelector('.menu-dropdown');
+  
+  menuButton.addEventListener('click', () => {
+    menuDropdown.classList.toggle('menu-open');
+  });
+  
   
   
