@@ -72,6 +72,15 @@ h1 {
   margin-bottom: 10px; /* Espaciado inferior */
 }
 
+@keyframes numberFlash {
+  0%, 100% {
+    color: #ff3333;
+  }
+  50% {
+    color: #e60000;
+  }
+}
+
 #countdown {
   font-size: 64px;
   color: #ff3333;
@@ -89,6 +98,7 @@ h1 {
   border-color: #ff3333; /* Cambio de color del borde al pasar el mouse */
   transition: background-color 2s ease; /* Transición de cambio de color de fondo */
   margin-top: 10px;
+  animation: numberFlash 1s infinite; /* Aplica la animación a los números */
 }
 
 #countdown:hover {
