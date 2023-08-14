@@ -304,7 +304,130 @@ body {
   background-color: #ff6699;
 }
 
+/* Estilos para resoluciones de celulares */
+@media (max-width: 700px) {
+  body {
+    background-color: #e6ccff;
+    color: black;
+  }
 
+  header {
+    padding: 10px;
+  }
 
+  h1 {
+    font-size: 24px;
+  }
 
+  .roses {
+    margin-top: 20px;
+  }
 
+  .rose {
+    width: 50px;
+    height: 15px;
+    margin: 0 5px;
+  }
+
+  .rose::before,
+  .rose::after {
+    width: 15px;
+    height: 35px;
+  }
+
+  #countdown-wrapper h1 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  #countdown {
+    font-size: 36px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-shadow: none;
+  }
+
+  .video-wrapper {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  .joke-button {
+    margin-top: 10px;
+  }
+
+  .joke-message {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .redirect-message {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .love-message {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #darkModeToggle {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para resoluciones aún más pequeñas */
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .rose {
+    width: 40px;
+    height: 10px;
+  }
+
+  .rose::before,
+  .rose::after {
+    width: 10px;
+    height: 30px;
+  }
+
+  #countdown-wrapper h1 {
+    font-size: 16px;
+  }
+
+  #countdown {
+    font-size: 28px;
+    margin-top: 5px;
+    padding: 3px 8px;
+  }
+
+  .video-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-top: 5px;
+  }
+
+  .joke-message {
+    font-size: 14px;
+  }
+
+  .redirect-message {
+    font-size: 12px;
+  }
+
+  .love-message {
+    font-size: 12px;
+  }
+
+  #darkModeToggle {
+    font-size: 14px;
+  }
+}
