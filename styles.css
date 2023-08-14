@@ -297,33 +297,12 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 #darkModeToggle:hover {
   background-color: #ff6699;
 }
 
-/* Estilos para tamaños de pantalla pequeños (móviles) */
-@media (max-width: 767px) {
-  /* Ajusta los estilos aquí */
-  body {
-    font-size: 16px; /* Ajusta el tamaño de fuente para una mejor legibilidad */
-  }
-
-  header {
-    padding: 10px; /* Reduce el espacio de encabezado en dispositivos pequeños */
-  }
-
-  /* Otros ajustes de estilos para dispositivos móviles */
-}
-
-/* Estilos para el modo oscuro en tamaños de pantalla pequeños */
-@media (max-width: 767px) {
-  .dark-mode {
-    background-color: #1a1a1a; /* Cambia el color de fondo en modo oscuro */
-    color: #ccc; /* Cambia el color del texto en modo oscuro */
-  }
-}
 
 
