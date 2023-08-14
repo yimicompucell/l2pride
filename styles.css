@@ -319,22 +319,6 @@ body {
     font-size: 24px;
   }
 
-  .roses {
-    margin-top: 20px;
-  }
-
-  .rose {
-    width: 50px;
-    height: 15px;
-    margin: 0 5px;
-  }
-
-  .rose::before,
-  .rose::after {
-    width: 15px;
-    height: 35px;
-  }
-
   #countdown-wrapper h1 {
     font-size: 18px;
     margin-bottom: 5px;
@@ -377,6 +361,15 @@ body {
     font-size: 16px;
   }
 }
+  #darkModeToggle {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+  }
+
+  .dark-mode #countdown-wrapper h1 {
+    color: #ffffff; /* Cambia el color del texto en modo oscuro */
+  }
 
 /* Estilos para resoluciones aún más pequeñas */
 @media (max-width: 500px) {
@@ -386,17 +379,6 @@ body {
 
   h1 {
     font-size: 20px;
-  }
-
-  .rose {
-    width: 40px;
-    height: 10px;
-  }
-
-  .rose::before,
-  .rose::after {
-    width: 10px;
-    height: 30px;
   }
 
   #countdown-wrapper h1 {
@@ -430,4 +412,20 @@ body {
   #darkModeToggle {
     font-size: 14px;
   }
+
+  #darkModeToggle {
+    position: fixed;
+    right: 20px;
+    font-size: 18px;
+  }
+
+  .dark-mode #countdown-wrapper h1 {
+    color: #ffffff; /* Cambia el color del texto en modo oscuro */
+  }
+}
+
+/* Modo Oscuro */
+.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
 }
