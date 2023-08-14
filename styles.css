@@ -306,7 +306,7 @@ body {
 
 /* Estilos para resoluciones de celulares */
 @media (max-width: 700px) {
-  body {
+  /* body {
     background-color: #e6ccff;
     color: black;
   }
@@ -355,7 +355,7 @@ body {
   .love-message {
     padding: 10px;
     font-size: 14px;
-  }
+  } */
 
   #darkModeToggle {
     font-size: 16px;
@@ -373,7 +373,7 @@ body {
 
 /* Estilos para resoluciones aún más pequeñas */
 @media (max-width: 500px) {
-  body {
+  /* body {
     font-size: 14px;
   }
 
@@ -407,7 +407,7 @@ body {
 
   .love-message {
     font-size: 12px;
-  }
+  } */
 
   #darkModeToggle {
     font-size: 14px;
@@ -422,10 +422,4 @@ body {
   .dark-mode #countdown-wrapper h1 {
     color: #ffffff; /* Cambia el color del texto en modo oscuro */
   }
-}
-
-/* Modo Oscuro */
-.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
 }
