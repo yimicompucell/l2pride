@@ -30,4 +30,32 @@ const countdown = setInterval(function() {
 document.getElementById('jokeBtn').addEventListener('click', function() {
     window.location.href = 'joker.html';
   });
+
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  let isDarkMode = localStorage.getItem('darkMode') === 'true';
+  
+  // Función para cambiar el modo
+  function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    localStorage.setItem('darkMode', isDarkMode);
+    applyDarkMode();
+  }
+  
+  // Función para aplicar el modo
+  function applyDarkMode() {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      document.body.classList.remove('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+  }
+  
+  // Agregar evento al botón
+  darkModeToggle.addEventListener('click', toggleDarkMode);
+  
+  // Aplicar modo al cargar la página
+  applyDarkMode();
+  
   

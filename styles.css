@@ -248,4 +248,59 @@ h1 {
 
 /* Resto de tus estilos existentes */
 
+/* Estilos para el body */
+body {
+  background-color: #e6ccff; /* Color de fondo morado */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Resto de tus estilos existentes */
+
+/* Estilos para el love-message */
+.love-message {
+  background-color: #f9f9f9; /* Color de fondo */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #333;
+}
+
+.love-message p {
+  margin: 10px 0;
+}
+
+/* Resto de tus estilos existentes */
+
+/* Modo Oscuro */
+.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Estilos para el botón */
+#darkModeToggle {
+  background-color: #ff99cc;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 50px;
+}
+
+#darkModeToggle:hover {
+  background-color: #ff6699;
+}
 
