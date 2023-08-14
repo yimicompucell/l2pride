@@ -1,3 +1,10 @@
+// Para activar el modo oscuro
+Cookies.set('modoOscuro', 'activo');
+
+// Para desactivar el modo oscuro
+Cookies.set('modoOscuro', 'inactivo');
+
+
 // Fecha objetivo: 18 de agosto de 2023 en la hora local de Perú (UTC -5)
 const targetDate = new Date('2023-08-18T00:00:00');
 const peruOffsetHours = -5; // Zona horaria de Perú (UTC -5)
@@ -31,6 +38,12 @@ document.getElementById('jokeBtn').addEventListener('click', function() {
     window.location.href = 'joker.html';
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const darkModeCookie = Cookies.get('darkMode');
+    isDarkMode = darkModeCookie === 'true';
+    applyDarkMode();
+  });
+  
   const darkModeToggle = document.getElementById('darkModeToggle');
   let isDarkMode = localStorage.getItem('darkMode') === 'true';
   
@@ -39,6 +52,7 @@ document.getElementById('jokeBtn').addEventListener('click', function() {
     isDarkMode = !isDarkMode;
     localStorage.setItem('darkMode', isDarkMode);
     applyDarkMode();
+    Cookies.set('darkMode', isDarkMode ? 'true' : 'false'); // Actualizar la cookie al cambiar el modo
   }
   
   // Función para aplicar el modo
@@ -52,11 +66,8 @@ document.getElementById('jokeBtn').addEventListener('click', function() {
     }
   }
   
-  // Agregar evento al botón
   darkModeToggle.addEventListener('click', toggleDarkMode);
-  
-  // Aplicar modo al cargar la página
-  applyDarkMode();
+  applyDarkMode();  // Aplicar modo al cargar la página
 
   const menuButton = document.getElementById('menuButton');
   const menuDropdown = document.querySelector('.menu-dropdown');
@@ -64,6 +75,11 @@ document.getElementById('jokeBtn').addEventListener('click', function() {
   menuButton.addEventListener('click', () => {
     menuDropdown.classList.toggle('menu-open');
   });
-  
-  
-  
+
+// Para verificar el estado del modo oscuro al cargar una página
+const modoOscuro = Cookies.get('modoOscuro');
+if (modoOscuro === 'activo') {
+    // Aplicar estilos de modo oscuro
+} else {
+    // Aplicar estilos normales
+}

@@ -304,6 +304,14 @@ body {
   background-color: #ff6699;
 }
 
+.dark-mode #redirect-message p {
+  color: #ffffff; /* Cambia el color del texto en modo oscuro */
+}
+
+.dark-mode #redirect-message a {
+  color: #ff00ea; /* Cambia el color del texto en modo oscuro */
+}
+
 /* Estilos para resoluciones de celulares */
 @media (max-width: 700px) {
   /* body {
@@ -424,3 +432,5 @@ body {
     color: #ffffff; /* Cambia el color del texto en modo oscuro */
   }
 }
+
+
