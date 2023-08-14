@@ -304,5 +304,47 @@ body {
   background-color: #ff6699;
 }
 
+/* Estilos para el ícono del menú */
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.menu-bars {
+  width: 30px;
+  height: 4px;
+  background-color: #ff99cc; /* Color de las barras */
+  margin: 6px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambiar el color del ícono al pasar el cursor sobre él */
+.menu-icon:hover .menu-bars {
+  background-color: #ff6699; /* Cambio de color al pasar el cursor */
+}
+
+/* Estilos para el menú desplegable */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Color del fondo del menú */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Mostrar el menú desplegable al hacer clic en el ícono */
+.menu-icon.active + .menu-dropdown {
+  display: block;
+}
+
+
 
 
