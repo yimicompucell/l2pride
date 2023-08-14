@@ -416,6 +416,7 @@ body {
   #darkModeToggle {
     position: fixed;
     right: 20px;
+    height: 30px;
     font-size: 18px;
   }
 
