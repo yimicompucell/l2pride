@@ -136,6 +136,47 @@ h1 {
 
 /* Más estilos y animaciones aquí */
 
+#randomMessageContainer {
+  padding: 10px;
+  background-color: #ffccf2; /* Color de fondo que combina */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.message-icon {
+  font-size: 36px;
+}
+
+#randomMessageContainer h2 {
+  margin-top: 0;
+  color: #9c049c; /* Color que combine y resalte */
+}
+
+#randomMessage {
+  font-size: 18px;
+  color: #ff00b3;
+  margin: 20px 0;
+}
+
+#newRandomMessageBtn {
+  background-color: #ff99cc;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newRandomMessageBtn:hover {
+  background-color: #e57fa1;
+}
+
+
 /* Estilos para el contenedor del video */
 .video-wrapper {
   width: 150px; /* Ajusta el tamaño del contenedor según tus necesidades */
