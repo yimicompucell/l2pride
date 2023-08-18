@@ -6,7 +6,7 @@ Cookies.set('modoOscuro', 'inactivo');
 
 
 // Fecha objetivo: 18 de agosto de 2023 en la hora local de Perú (UTC -5)
-const targetDate = new Date('2023-08-18T00:00:00');
+const targetDate = new Date('2023-09-18T00:00:00');
 const peruOffsetHours = -5; // Zona horaria de Perú (UTC -5)
 
 // Obtener la hora actual en la zona horaria de Perú
@@ -28,7 +28,7 @@ const countdown = setInterval(function() {
 
   if (timeLeft <= 0) {
     clearInterval(countdown);
-    document.getElementById('countdown').innerHTML = 'No tengo palabras para describir lo hermoso que me has hecho sentir desde que llegaste con esa bonita carita, haciéndome un ser feliz y lleno de vida. Desde el momento en que nos tomamos de la mano, supe que contigo era algo especial y me hiciste sentir mucho. Cada risa y los momentos encantadores a tu lado son cosas que jamás podré olvidar, porque siempre fuiste tú quien me sacó esa sonrisa sincera y alegre. Nadie sabe qué depara el futuro para nosotros, pero quiero que sepas que eres y siempre serás la persona a la que más he amado. Contigo compartí tantos momentos preciosos, de los cuales me siento muy orgulloso de que fueran contigo. Eres la única persona a quien he podido dar todo de mí y ser yo mismo. Gracias a ti soy una mejor persona y estoy muy feliz de lo que me he convertido a tu lado. Sé que no hemos tenido buenos momentos últimamente, pero deseo desde lo más profundo de mi corazón estar a tu lado, porque somos fuertes y capaces de superar cualquier obstáculo. Eres esa llama que mantiene mi alma cálida y llena de paz. Eres el rayo de luz que me ilumina para ser una mejor persona. Por ti, estoy dispuesto a continuar en esta vida y las que siguen. Ambos sabemos que un problema no nos derribará, ya que tú y yo somos más que eso, más que un mal momento. Pongo todo en manos de Dios para que todo se resuelva. Espero que podamos volver a revivir esos buenos momentos y aprender juntos de todos estos obstáculos, porque si la vida nos ha enseñado algo es que las coincidencias no existen. Feliz primer mes, mi amor ❤️';
+    document.getElementById('countdown').innerHTML = 'test';
   }
 
   timeLeft -= 1000; // Restar un segundo cada iteración
