@@ -84,6 +84,25 @@ header h1 {
     color: #007bff;
 }
 
+/* Estilos para la sección "Acerca de la página" */
+.about-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
 /* Rest of the existing CSS styles */
 
 /* Library Book Styles */
@@ -151,6 +170,8 @@ header h1 {
     border: 2px solid #ccc; /* Agrega un borde alrededor del contenedor */
     padding: 20px;
     text-align: center;
+    margin-left: 120px;
+    margin-right: 120px;
 }
 
 .team-image {
