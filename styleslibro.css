@@ -1,0 +1,205 @@
+/* CSS for styling the page */
+/* You can add more styles as needed */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Rest of the existing CSS styles */
+
+/* Header Navigation Styles */
+.header-nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header-nav a:hover {
+    color: #007bff;
+}
+
+
+header h1 {
+    font-size: 36px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para secciones */
+.section {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #007bff;
+}
+
+/* Estilos para la portada del libro */
+.book-cover {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+    display: block; /* Elimina espacios en blanco debajo de la imagen */
+    margin: 20px auto; /* Centra la imagen horizontalmente y agrega margen superior e inferior */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave a la imagen */
+    border-radius: 5px; /* Agrega bordes redondeados a la imagen */
+}
+
+
+/* Estilos para la sección de detalles del libro */
+.book-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.book-title {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.book-author {
+    font-style: italic;
+    color: #555;
+}
+
+.book-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.book-read-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para el Capítulo 1 */
+.book-chapter {
+    margin-top: 30px;
+    text-align: justify;
+}
+
+.chapter-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chapter-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+
+/* Estilos para el footer */
+footer {
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: #fff; /* Texto blanco en el footer */
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-text {
+    font-size: 14px; /* Tamaño de fuente para el texto del footer */
+}
+
+.footer-link {
+    color: #55a0ff; /* Color de enlace en el footer */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #4499ff; /* Color de enlace al pasar el cursor en el footer */
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+    background-color: #1B1F23; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+.dark-mode .section-title {
+    color: #55a0ff; /* Color de título en modo oscuro */
+}
+
+.dark-mode .book-container {
+    background-color: #1B1F23; /* Fondo de la librería en modo oscuro */
+}
+
+.dark-mode .book {
+    background-color: #1B1F21; /* Fondo de los cuadros de libros en modo oscuro */
+    border: 1px solid #555; /* Borde en modo oscuro */
+}
+
+.dark-mode .book img {
+    border: 1px solid #555; /* Borde de las imágenes en modo oscuro */
+}
+
+.dark-mode .book a {
+    background-color: #55a0ff; /* Color de botón en modo oscuro */
+}
+
+.dark-mode .book a:hover {
+    background-color: #4499ff; /* Color de botón al pasar el cursor en modo oscuro */
+}
+
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .book-container {
+        display: flex;
+        flex-direction: column; /* 2 arriba y 2 abajo en columnas */
+    }
+
+    .book {
+        flex-basis: calc(50% - 20px); /* 2 en una fila */
+    }
+}
