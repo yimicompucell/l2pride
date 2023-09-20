@@ -228,3 +228,10 @@ footer {
 .dark-mode .book a:hover {
     background-color: #4499ff; /* Color de botón al pasar el cursor en modo oscuro */
 }
+
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .book {
+        flex-basis: calc(50% - 20px); /* 2 en una fila */
+    }
+}
