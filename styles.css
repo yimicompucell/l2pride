@@ -17,6 +17,7 @@ body {
 header {
     background-image: url('2862101.jpg');
     background-size: cover;
+    background-position: bottom; /* Ajusta la posición vertical (100px en este ejemplo) */
     text-align: center;
     padding: 220px 0;
     color: #fff;
@@ -212,7 +213,7 @@ footer {
 }
 
 .dark-mode .book {
-    background-color: #666; /* Fondo de los cuadros de libros en modo oscuro */
+    background-color: #1B1F21; /* Fondo de los cuadros de libros en modo oscuro */
     border: 1px solid #555; /* Borde en modo oscuro */
 }
 
