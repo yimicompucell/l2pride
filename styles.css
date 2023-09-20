@@ -231,8 +231,12 @@ footer {
 
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
-
     .book-container {
+        display: flex;
         flex-direction: column; /* 2 arriba y 2 abajo en columnas */
+    }
+
+    .book {
+        flex-basis: calc(50% - 20px); /* 2 en una fila */
     }
 }
