@@ -143,6 +143,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .team-member {
@@ -172,6 +173,29 @@ header h1 {
 .section-title {
     text-align: center;
 }
+
+/* Estilos para el footer */
+footer {
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: #fff; /* Texto blanco en el footer */
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-text {
+    font-size: 14px; /* Tamaño de fuente para el texto del footer */
+}
+
+.footer-link {
+    color: #55a0ff; /* Color de enlace en el footer */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #4499ff; /* Color de enlace al pasar el cursor en el footer */
+}
+
 
 /* Estilos para el modo oscuro */
 .dark-mode {
