@@ -250,6 +250,59 @@ section {
     text-align: center;
 }
 
+@keyframes notificationAnimation {
+    0% {
+        border: 2px solid transparent;
+    }
+    25% {
+        border: 2px solid #fff; /* Muestra el borde al 25% de la animación */
+    }
+    100% {
+        border: 2px solid #fff;
+    }
+}
+
+.fullscreen-notification {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.3s, transform 0.3s;
+    animation: notificationAnimation 0.3s; /* Utiliza la animación en lugar de transición */
+}
+
+.notification-message {
+    margin-top: 180px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px; /* Reduzco el padding para dar espacio al icono */
+    text-align: center; /* Centramos el texto horizontalmente */
+    position: relative; /* Añadimos position relative para establecer la posición del icono */
+}
+
+.error-icon {
+    font-size: 120px;
+    color: red;
+    display: block; /* Hacemos que el icono sea un bloque para que respete el espacio */
+    position: absolute;
+    top: 50%; /* Lo desplazamos hacia abajo un 50% de la notificación */
+    left: 50%; /* Lo desplazamos hacia la derecha un 50% de la notificación */
+    transform: translate(-50%, -50%); /* Centramos el icono vertical y horizontalmente */
+}
+
+.notification-open {
+    overflow: hidden;
+}
+
 /* Estilos para el footer */
 footer {
     background-color: #333; /* Fondo oscuro para el footer */
@@ -468,6 +521,10 @@ footer {
 /* Estilos para mostrar el menú desplegable al hacer clic en el botón hamburguesa */
 .show-menu {
     display: block;
+}
+
+.error-icon {
+    top: 60%; /* Lo desplazamos hacia abajo un 50% de la notificación */
 }
 
 }

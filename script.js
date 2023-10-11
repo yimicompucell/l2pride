@@ -39,3 +39,65 @@ closeButton.addEventListener('click', () => {
     content.style.pointerEvents = 'none'; // Deshabilita interacción con el contenido principal
     body.style.overflow = 'auto'; // Habilita el desplazamiento
 });
+
+// Variable global para llevar un registro del estado de la notificación
+let notificationShown = false;
+
+// Evita el desplazamiento de la página mientras se muestra la notificación
+function disableScroll() {
+    if (notificationShown) {
+        const scrollY = window.scrollY;
+        window.onscroll = () => {
+            window.scrollTo(0, scrollY);
+        };
+    }
+}
+
+// Restaura el desplazamiento de la página
+function enableScroll() {
+    window.onscroll = null;
+}
+
+const socialLinks = document.querySelectorAll('.redes-sociales a[href="#"]');
+const notification = document.querySelector('.fullscreen-notification');
+const closeIcon = document.querySelector('.close-icon'); // Cambiado para seleccionar el icono de cierre
+
+socialLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita que el enlace redireccione
+
+        // Muestra la notificación con una animación
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.opacity = 1;
+            notification.style.transform = 'scale(1)';
+        }, 10);
+
+        // Cierra la notificación con una animación después de un tiempo (puedes ajustar el tiempo)
+        setTimeout(() => {
+            notification.style.opacity = 0;
+            notification.style.transform = 'scale(0.7)';
+            setTimeout(() => {
+                notification.style.display = 'none';
+                // Restaura el desplazamiento cuando se oculta la notificación
+                enableScroll();
+            }, 300); // 300 ms para coincidir con la duración de la transición
+        }, 2000); // 2000 ms (2 segundos) en este caso
+
+        // Evita el desplazamiento mientras se muestra la notificación
+        notificationShown = true;
+        disableScroll();
+    });
+});
+
+// Cierra la notificación cuando se hace clic en el icono de cierre
+closeIcon.addEventListener('click', () => {
+    notification.style.opacity = 0;
+    notification.style.transform = 'scale(0.7)';
+    setTimeout(() => {
+        notification.style.display = 'none';
+        // Restaura el desplazamiento cuando se oculta la notificación
+        enableScroll();
+    }, 300); // 300 ms para coincidir con la duración de la transición
+});
+
