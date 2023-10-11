@@ -9,25 +9,29 @@
 
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
+const content = document.querySelector('.content'); // Selecciona el elemento con el fondo semitransparente
 
 menuToggle.addEventListener('click', () => {
-    menu.style.height = '100%'; // Restablece la altura al valor completo
-    menu.classList.add('show-menu');
-});
-
-// Agregar esto al código JavaScript existente
-document.addEventListener('click', (e) => {
-    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+    if (menu.classList.contains('show-menu')) {
+        // Si el menú ya está abierto, ciérralo
+        menu.style.height = '0';
         menu.classList.remove('show-menu');
+        content.style.opacity = 0; // Oculta el fondo
+        content.style.pointerEvents = 'none'; // Deshabilita interacción con el fondo
+    } else {
+        // Si el menú está cerrado, ábrelo
+        menu.style.height = '100%';
+        menu.classList.add('show-menu');
+        content.style.opacity = 0.5; // Muestra el fondo con opacidad del 50%
+        content.style.pointerEvents = 'auto'; // Habilita interacción con el fondo
     }
 });
 
 const closeButton = document.querySelector('.close-button');
 
 closeButton.addEventListener('click', () => {
-    menu.style.height = '0'; // Establece el ancho en cero al cerrar
-    // Opcionalmente, puedes agregar un retraso antes de ocultar el menú
-    setTimeout(() => {
-        menu.classList.remove('show-menu');
-    }, 400); // 400 ms es la duración de la transición
+    menu.style.height = '0'; // Cierra el menú
+    menu.classList.remove('show-menu');
+    content.style.opacity = 0; // Oculta el fondo nuevamente
+    content.style.pointerEvents = 'none'; // Deshabilita interacción con el contenido principal
 });
