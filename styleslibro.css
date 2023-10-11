@@ -20,9 +20,20 @@ body {
 .header-nav {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 30px;
+    transition: background-color 0.3s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*position: fixed; */
+    /*top: 0; */
+    /*width: 100%; */
+    /*text-align: center; */
 }
+
+/* .header-nav.sticky {
+    background-color: #333;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
 
 .header-nav ul {
     list-style-type: none;
@@ -39,6 +50,7 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .header-nav a:hover {
@@ -85,29 +97,67 @@ header h1 {
 }
 
 
-/* Estilos para la sección de detalles del libro */
 .book-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.book-cover {
+    max-width: 200px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin: 2px;
+    transition: transform 0.3s ease; /* Efecto de escala al pasar el cursor */
+}
+
+.book-cover:hover {
+    transform: scale(1.1);
 }
 
 .book-title {
-    font-size: 24px;
-    margin-top: 0;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #007BFF; /* Color del título */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 10px;
 }
 
 .book-author {
     font-style: italic;
-    color: #555;
+    color: #555; /* Color del autor */
 }
 
-.book-description {
-    font-size: 16px;
-    line-height: 1.5;
+.book-info {
     margin-top: 20px;
+    list-style: none;
+    margin-right: 60px;
 }
+
+.book-info li {
+    margin-bottom: 10px;
+}
+
+.book-info li strong {
+    font-weight: bold;
+    color: #007BFF; /* Color de los elementos destacados */
+}
+
+.book-introduction {
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #fff; /* Color del texto principal */
+    font-family: 'Arial', sans-serif;
+}
+
 
 .book-read-link {
     display: inline-block;
@@ -122,32 +172,61 @@ header h1 {
 
 /* Estilos para el Capítulo 1 */
 .book-chapter {
-    margin-top: 30px;
-    text-align: justify;
-    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .chapter-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 24px;
+    color: #007BFF; /* Color del título del capítulo */
+    margin-top: 10px;
 }
 
 .chapter-content {
     font-size: 16px;
-    line-height: 1.5;
+    color: #fff; /* Color del contenido del capítulo */
     margin-top: 10px;
 }
 
-#chapter-1 {
-    display: block;
+.btn {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chapter-buttons {
+    text-align: center; /* Centra los botones horizontalmente dentro del contenedor */
+    margin-top: 20px; /* Agrega un margen superior para separarlos del contenido del capítulo */
+}
+
+.btn-prev {
+    float: left; /* Alinea el botón de retroceso a la izquierda */
+    margin-right: 10px; /* Agrega un margen derecho para separarlo del contenido del capítulo */
+    margin-top: -18px;
+}
+
+.btn-next {
+    float: right; /* Alinea el botón de avance a la derecha */
+    margin-top: -18px;
+    margin-left: 10px; /* Agrega un margen izquierdo para separarlo del contenido del capítulo */
 }
 
 
-/* Estilos para el Capítulo 1 */
-.book-chapter2 {
-    margin-top: 30px;
-    text-align: justify;
-    display: none;
+.btn:hover {
+    background-color: #0056b3; /* Cambia de color al pasar el cursor */
+}
+
+
+#chapter-1 {
+    display: block;
 }
 
 .chapter-title {
@@ -218,12 +297,124 @@ footer {
 
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .book-container {
-        display: flex;
-        flex-direction: column; /* 2 arriba y 2 abajo en columnas */
-    }
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
 
-    .book {
-        flex-basis: calc(50% - 20px); /* 2 en una fila */
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0; /* Espacio entre las barras */
+    margin-left: -10px;
+    transition: 0.4s; /* Efecto de transición al hacer clic */
+}
+
+.menu {
+    display: block;
+    background-color: #1B1F23;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 0; /* Inicialmente, el ancho es cero */
+    z-index: 2;
+    overflow: hidden; /* Oculta el contenido que no quepa en el menú */
+    transition: height 0.4s; /* Agrega una transición a la propiedad width */
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.menu.show-menu {
+    height: 30%; /* Cuando se abre, el menú se expande al 100% del ancho */
+}
+
+.menu.show-menu ul {
+    opacity: 1; /* Hace que el texto sea completamente visible */
+}
+
+.menu.show-menu a {
+    color: #fff; /* Estilo de enlace en el menú abierto */
+}
+
+.content {
+    background: rgba(0, 0, 0, 0); /* Fondo inicialmente invisible */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Asegura que esté encima del menú */
+    pointer-events: none; /* Evita que los elementos del contenido sean interactivos */
+    transition: background 0.3s; /* Agrega una transición para la opacidad */
+}
+
+.menu.show-menu ~ .content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad del 50% al abrir el menú */
+    pointer-events: auto; /* Habilita la interacción con el contenido al abrir el menú */
+}
+
+/* Estilos para el botón "X" */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color:#007bff
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+    margin-top: 18px;
+}
+
+.menu li {
+    padding: 40px;
+    text-align: center;
+    transition: color 0.3s; /* Efecto de transición al pasar el cursor */
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Estilos para mostrar el menú desplegable al hacer clic en el botón hamburguesa */
+.show-menu {
+    display: block;
+}
+
+}
+
+/* Para pantallas más grandes que 768px, oculta el botón hamburguesa y el botón de cierre */
+@media (min-width: 769px) {
+    .menu-toggle,
+    .close-button {
+        display: none;
     }
 }

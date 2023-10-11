@@ -164,9 +164,12 @@ header h1 {
     background-color: #0056b3;
 }
 
-/* Rest of the existing CSS styles */
-
-/* Rest of the existing CSS styles */
+/* Agregar un borde superior a cada sección */
+section {
+    margin-top: 30px;
+    border-top: 1px solid #ccc; /* Un borde de 1 píxel de ancho en color gris claro */
+    padding-top: 20px; /* Espacio adicional arriba de la línea de separación */
+}
 
 /* Team Styles */
 .team-container {
@@ -202,6 +205,45 @@ header h1 {
 .tituloequipo {
     text-align: center;
 }
+
+/* Estilos para la sección de redes sociales */
+.redes-sociales {
+    padding: 20px; /* Espaciado interno */
+    border-top: 1px solid #ccc; /* Línea de separación superior */
+    text-align: center;
+}
+
+.redes-sociales h4 {
+    font-size: 20px; /* Tamaño del título */
+    margin-bottom: 10px; /* Espacio entre el título y la lista de redes sociales */
+}
+
+.redes-sociales ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.redes-sociales li {
+    margin-right: 20px; /* Espacio entre elementos de la lista */
+    display: flex;
+    align-items: center;
+}
+
+.redes-sociales a {
+    text-decoration: none; /* Elimina la subrayado de los enlaces */
+    color: #333; /* Color de texto */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los iconos de redes sociales (ajusta los tamaños según sea necesario) */
+.redes-sociales i {
+    font-size: 24px;
+    margin-right: 10px; /* Espacio entre el icono y el nombre de la red social */
+}
+
 
 /* Centered Section Titles */
 .section-title {
@@ -262,6 +304,19 @@ footer {
     background-color: #4499ff; /* Color de botón al pasar el cursor en modo oscuro */
 }
 
+/* Libros.html /*
+
+/* Estilos para las imágenes de los libros */
+.book-cover {
+    width: 200px; /* Ancho de las imágenes de los libros */
+    height: auto; /* Altura automática para mantener la proporción */
+    border: 1px solid #ccc; /* Borde alrededor de las imágenes */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 10px; /* Espacio entre las imágenes */
+}
+
+
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
     .book-container {
@@ -320,6 +375,7 @@ footer {
     height: 3px;
     background-color: #fff;
     margin: 4px 0; /* Espacio entre las barras */
+    margin-left: -10px;
     transition: 0.4s; /* Efecto de transición al hacer clic */
 }
 
@@ -415,4 +471,13 @@ footer {
 }
 
 }
+
+/* Para pantallas más grandes que 768px, oculta el botón hamburguesa y el botón de cierre */
+@media (min-width: 769px) {
+    .menu-toggle,
+    .close-button {
+        display: none;
+    }
+}
+
 
