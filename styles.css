@@ -170,8 +170,8 @@ header h1 {
     border: 2px solid #ccc; /* Agrega un borde alrededor del contenedor */
     padding: 20px;
     text-align: center;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 180px;
+    margin-right: 180px;
 }
 
 .team-image {
@@ -260,4 +260,35 @@ footer {
     .book {
         flex-basis: calc(50% - 20px); /* 2 en una fila */
     }
+
+    /* Team Styles */
+    .team-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 50px;
 }
+
+    .team-member {
+    border: 2px solid #ccc; /* Agrega un borde alrededor del contenedor */
+    padding: 20px;
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    }
+
+    .team-image {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 50%; /* Crea una forma circular */
+        overflow: hidden; /* Oculta las partes de la imagen fuera del círculo */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+    }
+
+    .team-info p {
+        margin: 10px 0;
+}
+}
+

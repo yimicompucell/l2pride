@@ -124,6 +124,30 @@ header h1 {
 .book-chapter {
     margin-top: 30px;
     text-align: justify;
+    display: none;
+}
+
+.chapter-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chapter-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+#chapter-1 {
+    display: block;
+}
+
+
+/* Estilos para el Capítulo 1 */
+.book-chapter2 {
+    margin-top: 30px;
+    text-align: justify;
+    display: none;
 }
 
 .chapter-title {
