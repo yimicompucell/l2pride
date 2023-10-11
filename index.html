@@ -6,18 +6,30 @@
     <link rel="stylesheet" href="styles.css">
     <title>Tu Biblioteca Virtual</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Agrega un icono en la barra de título -->
+    <link rel="shortcut icon" type="image/png" href="logo.png">
 </head>
 <body class="dark-mode">
-    <!-- Header Navigation -->
-    <nav class="header-nav">
+<!-- Header Navigation -->
+<nav class="header-nav">
+    <!-- Botón Hamburguesa -->
+    <button class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <!-- Menú Desplegable -->
+    <div class="menu">
+        <button class="close-button">X</button>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#libros">Libros (No disponible)</a></li>
             <li><a href="#sugerencias">Sugerencias</a></li>
-<!--             <li><a href="#ranura1">Ranura 1</a></li>
-            <li><a href="#ranura2">Ranura 2</a></li> -->
+            <!-- Agrega más elementos de menú según sea necesario -->
         </ul>
-    </nav>
+    </div>
+</nav>
+
                 <header>
         <h1>Bienvenido a Tu Biblioteca Virtual</h1>
         <p>Explora libros inspirados en fechas cívicas del colegio SMP</p>
@@ -69,7 +81,7 @@
         <!-- Miembro del Equipo 1 -->
         <div class="team-member">
             <img src="ideogram (3).jpeg" alt="Nickson Steven Valera Reyes" class="team-image">
-            <h3 class="team-member-name">Encargado General</h3>
+            <h3 class="team-member-name"><em>Encargado General</em></h3>
             <p class="team-member-description">
                 <i class="fas fa-user"></i> Soy Nickson Steven Valera Reyes, el único miembro apasionado del equipo. Mi compromiso en este proyecto es contribuir al éxito de nuestra biblioteca virtual, brindando acceso a libros inspiradores relacionados con fechas cívicas importantes. Estoy comprometido con la educación y la promoción de la cultura cívica.
             </p>
