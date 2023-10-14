@@ -88,31 +88,33 @@ header h1 {
 }
 
 /* Estilos para la portada del libro */
-.book-cover {
-    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
-    display: block; /* Elimina espacios en blanco debajo de la imagen */
-    margin: 20px auto; /* Centra la imagen horizontalmente y agrega margen superior e inferior */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave a la imagen */
-    border-radius: 5px; /* Agrega bordes redondeados a la imagen */
-}
 
-
-.book-details {
+.book-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-right: 40px;
 }
 
 .book-cover {
     max-width: 200px;
     border: 2px solid #333;
     border-radius: 10px;
-    margin: 2px;
     transition: transform 0.3s ease; /* Efecto de escala al pasar el cursor */
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+    text-align: center; /* Centrar el texto */
+    padding: 20px;
+    margin-left: 20px; /* Espacio entre la imagen y la información */
 }
 
 .book-cover:hover {
@@ -120,12 +122,11 @@ header h1 {
 }
 
 .book-title {
-    font-size: 32px;
-    margin-top: 20px;
+    font-size: 24px;
+    margin-right: 30px;
     color: #007BFF; /* Color del título */
     font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 8px;
+    padding: 30px;
     border: 1px solid #fff;
     border-radius: 10px;
 }
@@ -133,12 +134,18 @@ header h1 {
 .book-author {
     font-style: italic;
     color: #555; /* Color del autor */
+    margin-top: 10px;
+    margin-right: 0px;
 }
 
 .book-info {
     margin-top: 20px;
     list-style: none;
     margin-right: 60px;
+}
+
+.book-info ul {
+    list-style: none;
 }
 
 .book-info li {
@@ -177,7 +184,41 @@ header h1 {
     border-radius: 10px;
     margin: 20px 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
+/* Estilos para los íconos de Font Awesome */
+.book-title i,
+.book-author i,
+.book-info i,
+.book-introduction i {
+    font-size: 20px; /* Tamaño del ícono */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilos para los títulos de sección (íconos de información) */
+.book-title i.fas,
+.book-introduction i.fas {
+    color: #007BFF; /* Color del ícono */
+}
+
+/* Estilos para los títulos de sección (íconos de introducción) */
+.book-introduction i.fas {
+    color: #FF5733; /* Otro color del ícono */
+}
+
+/* Estilos para los íconos de Font Awesome en listas (por ejemplo, género, temática, estilo literario) */
+.book-info ul i.fas {
+    color: #555; /* Color de íconos en la lista */
+}
+
+/* Estilos para los títulos de lista en listas de íconos */
+.book-info li strong {
+    font-weight: bold;
+    color: #007BFF; /* Color de elementos destacados */
+}
+
 
 .chapter-title {
     font-size: 24px;
@@ -295,6 +336,62 @@ footer {
     background-color: #4499ff; /* Color de botón al pasar el cursor en modo oscuro */
 }
 
+.form-group {
+    margin-bottom: 10px;
+}
+
+.comentarios-resenas {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.comentarios-resenas h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#comentario-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 768px) {
 /* Estilos para el botón hamburguesa */
@@ -407,6 +504,29 @@ footer {
 /* Estilos para mostrar el menú desplegable al hacer clic en el botón hamburguesa */
 .show-menu {
     display: block;
+}
+
+.book-cover {
+    width: 50%;
+    height: 50%;
+}
+
+.book-title {
+    margin-top: -10px;
+}
+
+.book-container {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    text-align: center;
+}
+
+.book-details {
+    margin-left: 0; /* Elimina el espacio entre la imagen y la información */
+}
+
+.book-cover {
+    max-width: 100%; /* Haz que la imagen ocupe todo el ancho disponible */
+    margin-bottom: 20px; /* Agrega espacio debajo de la imagen */
 }
 
 }

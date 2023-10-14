@@ -6,6 +6,7 @@
     <title>Libreria | Juventud Y Primavera</title>
     <link rel="stylesheet" href="styleslibro.css"> <!-- Enlaza tu archivo CSS principal -->
     <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="dark-mode">
     <!-- Encabezado de la Página -->
@@ -35,30 +36,32 @@
 
 <!-- Contenido de la Página -->
 <main>
-    <!-- Detalles del Libro -->
-    <section class="book-details">
-        <h1 class="book-title">Juventud y Primavera: Una Fiesta Olvidada</h1>
+<!-- Detalles del Libro -->
+<section class="book-details">
+    <div class="book-container">
+        <h1 class="book-title"><i class="fas fa-book"></i> Juventud y Primavera: Una Fiesta Olvidada</h1>
         <img src="ideogram (5).jpeg" alt="Portada del Libro" class="book-cover">
-        <p class="book-author">Autor: Nickson Valera</p>
-        
+        <p class="book-author"><i class="fas fa-user"></i> Autor: Nickson Valera</p>
+
         <ul class="book-info">
             <li><strong>Descripción del Libro:</strong>
-                "Juventud y Primavera: Una Fiesta Olvidada" es un libro escrito en el estilo característico de Nickson Valera que explora la festividad del Día de la Juventud y el Inicio de la Primavera en Perú. Este libro reflexivo aborda la pérdida de relevancia de esta celebración única en la sociedad actual, destacando su importancia cultural, la conexión con la naturaleza y el papel crucial de la juventud en la identidad peruana. A través de quince capítulos, el libro narra la evolución de la festividad, su impacto en la sociedad y cómo su renacimiento puede inspirar un futuro enriquecido por la cultura, la naturaleza y la comunidad.
+                <i class="fas fa-info-circle"></i> "Juventud y Primavera: Una Fiesta Olvidada" es un libro escrito en el estilo característico de Nickson Valera que explora la festividad del Día de la Juventud y el Inicio de la Primavera en Perú. Este libro reflexivo aborda la pérdida de relevancia de esta celebración única en la sociedad actual, destacando su importancia cultural, la conexión con la naturaleza y el papel crucial de la juventud en la identidad peruana. A través de quince capítulos, el libro narra la evolución de la festividad, su impacto en la sociedad y cómo su renacimiento puede inspirar un futuro enriquecido por la cultura, la naturaleza y la comunidad.
             </li>
             <li><strong>Contenido del Libro:</strong>
                 <ul>
-                    <li><strong>Género:</strong> Libro reflexivo.</li>
-                    <li><strong>Temática:</strong> La importancia cultural del Día de la Juventud y el Inicio de la Primavera en Perú, la pérdida de su relevancia en la sociedad actual, la conexión con la naturaleza, el papel de la juventud en la sociedad y la esperanza en su renacimiento como un faro de identidad cultural y unidad social.</li>
-                    <li><strong>Estilo Literario:</strong> Estilo profundo y emotivo, característico de Nickson Valera, que busca inspirar la reflexión sobre la preservación de las tradiciones culturales y la importancia de la comunidad.</li>
+                    <li><i class="fas fa-book"></i> <strong>Género:</strong> Libro reflexivo.</li>
+                    <li><i class="fas fa-book-reader"></i> <strong>Temática:</strong> La importancia cultural del Día de la Juventud y el Inicio de la Primavera en Perú, la pérdida de su relevancia en la sociedad actual, la conexión con la naturaleza, el papel de la juventud en la sociedad y la esperanza en su renacimiento como un faro de identidad cultural y unidad social.</li>
+                    <li><i class="fas fa-feather-alt"></i> <strong>Estilo Literario:</strong> Estilo profundo y emotivo, característico de Nickson Valera, que busca inspirar la reflexión sobre la preservación de las tradiciones culturales y la importancia de la comunidad.</li>
                 </ul>
             </li>
         </ul>
-        
-        <h1>Introducción</h1>
-        <p class="book-introduction">
-            En el corazón de Perú, en el tranquilo y a menudo pasivo mes de septiembre, una celebración poco común emerge de las sombras: el Día de la Juventud y el Inicio de la Primavera, celebrado el 23 de septiembre. Es una festividad que es única para los peruanos, una celebración que combina la energía juvenil con la esperanza de una nueva estación. Sin embargo, a pesar de su singularidad y significado, esta festividad está en peligro de caer en el olvido, especialmente entre las generaciones más jóvenes. En este libro, exploraremos la historia y la importancia de esta festividad, así como la lamentable falta de aprecio que los jóvenes tienen por ella. A lo largo de estas páginas, reflexionaremos sobre el impacto de olvidar nuestras tradiciones y cómo esto afecta a la juventud y la sociedad en su conjunto.
-        </p>
-    </section>
+    </div>
+    <h1><i class="fas fa-info-circle"></i> Introducción</h1>
+    <p class="book-introduction">
+        En el corazón de Perú, en el tranquilo y a menudo pasivo mes de septiembre, una celebración poco común emerge de las sombras: el Día de la Juventud y el Inicio de la Primavera, celebrado el 23 de septiembre. Es una festividad que es única para los peruanos, una celebración que combina la energía juvenil con la esperanza de una nueva estación. Sin embargo, a pesar de su singularidad y significado, esta festividad está en peligro de caer en el olvido, especialmente entre las generaciones más jóvenes. En este libro, exploraremos la historia y la importancia de esta festividad, así como la lamentable falta de aprecio que los jóvenes tienen por ella. A lo largo de estas páginas, reflexionaremos sobre el impacto de olvidar nuestras tradiciones y cómo esto afecta a la juventud y la sociedad en su conjunto.
+    </p>
+</section>
+
     
 
     <div class="book-chapter" id="chapter-1">
@@ -407,6 +410,40 @@
         <button class="btn btn-prev" onclick="prevChapter()">Retroceder</button>
     </div>
     
+    <div class="comentarios-resenas">
+        <h3>Comentarios y Reseñas</h3>
+        <!-- Agregar sección de comentarios existentes si tienes alguna -->
+    
+        <h4>Añadir un Comentario:</h4>
+        <form id="comentario-form">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" required></textarea>
+            </div>
+            <div class="form-group">
+                <div class="star-rating">
+                    <label for="calificacion">Calificación:</label>
+                    <select id="calificacion" required>
+                        <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                        <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734;</option>
+                        <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734;</option>
+                        <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
+                        <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
+                    </select>
+                    <input type="hidden" id="calificacion-hidden" name="calificacion-hidden">
+                </div>
+                
+            </div>
+            <button type="submit">Enviar Comentario</button>
+        </form>
+    </div>
+    
+    
+
 </main>
 
 
