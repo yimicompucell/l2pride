@@ -41,15 +41,50 @@
     </div>
 </nav>
 
-<!-- Menú móvil -->
-<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white transform translate-x-full transition-transform duration-300 z-50">
-    <div class="p-6 space-y-4">
-        <button id="close-menu" class="text-2xl w-full text-right">×</button>
-        <a href="#inicio" class="block py-2">Inicio</a>
-        <a href="#servicios" class="block py-2">Servicios</a>
-        <a href="#contacto" class="block py-2">Contacto</a>
+<!-- Menú móvil modernizado -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-blue-900/95 backdrop-blur-lg border-l border-white/10 text-white transform translate-x-full transition-all duration-300 z-50">
+    <!-- Encabezado del menú -->
+    <div class="p-6 border-b border-white/10">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/logo.webp" alt="Logo" class="h-10 w-10 rounded-lg">
+                <span class="text-xl font-bold">J&M Servicell</span>
+            </div>
+            <button id="close-menu" class="p-2 hover:bg-white/10 rounded-full transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Items del menú -->
+    <div class="p-6 space-y-6">
+        <a href="#inicio" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-white/10 hover:translate-x-2 transition-all">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            <span class="text-lg">Inicio</span>
+        </a>
+        
+        <a href="#servicios" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-white/10 hover:translate-x-2 transition-all">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <span class="text-lg">Servicios</span>
+        </a>
+        
+        <a href="#contacto" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-white/10 hover:translate-x-2 transition-all">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span class="text-lg">Contacto</span>
+        </a>
     </div>
 </div>
+
+<!-- Overlay para el menú móvil -->
+<div id="menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden"></div>
 
     <!-- Hero Section con parallax -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-[url('assets/banner-repair.webp')] bg-fixed bg-cover bg-center">
@@ -207,19 +242,31 @@
 
     <!-- Scripts -->
     <script>
-        // Menú móvil
+        // Menú móvil mejorado
         const menuBtn = document.getElementById('menu-btn');
         const closeBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
+        const menuOverlay = document.getElementById('menu-overlay');
+    
+        // Función para alternar el menú
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            menuOverlay.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+    
+        // Event listeners para el menú
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+    
+        // Cerrar menú con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+                toggleMenu();
+            }
         });
-
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
-
+    
         // Navbar con efecto de scroll
         const navbar = document.querySelector('nav');
         window.addEventListener('scroll', () => {
@@ -233,8 +280,8 @@
                 navbar.classList.remove('bg-blue-900');
             }
         });
-
-        // Smooth scroll para los enlaces del menú
+    
+        // Smooth scroll para los enlaces
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -243,12 +290,15 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
+                
                 // Cerrar menú móvil si está abierto
-                mobileMenu.classList.add('translate-x-full');
+                if (!mobileMenu.classList.contains('translate-x-full')) {
+                    toggleMenu();
+                }
             });
         });
-
-        // Animación de entrada para los elementos cuando son visibles
+    
+        // Animación de elementos al hacer scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -258,7 +308,8 @@
         }, {
             threshold: 0.1
         });
-
+    
+        // Observar todas las cards de servicios
         document.querySelectorAll('.service-card').forEach(card => {
             observer.observe(card);
         });
