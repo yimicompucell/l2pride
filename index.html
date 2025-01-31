@@ -25,28 +25,31 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navbar con efecto de scroll -->
-    <nav class="fixed w-full bg-blue-900/95 backdrop-blur-sm text-white p-4 z-50 transition-all duration-300">
-        <div class="container mx-auto flex justify-between items-center">
+<!-- Navbar con efecto de scroll -->
+<nav class="fixed w-full bg-blue-900/95 backdrop-blur-sm text-white p-4 z-50 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-4">
             <img src="assets/logo.webp" alt="Logo J&M ServiCell" class="h-12">
-            <div class="hidden md:flex space-x-8">
-                <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
-                <a href="#servicios" class="hover:text-yellow-400 transition-colors">Servicios</a>
-                <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
-            </div>
-            <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+            <h1 class="text-white font-bold text-xl">J&M Servicell</h1>
         </div>
-    </nav>
-
-    <!-- Menú móvil -->
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white transform translate-x-full transition-transform duration-300 z-50">
-        <div class="p-6 space-y-4">
-            <button id="close-menu" class="text-2xl w-full text-right">×</button>
-            <a href="#inicio" class="block py-2">Inicio</a>
-            <a href="#servicios" class="block py-2">Servicios</a>
-            <a href="#contacto" class="block py-2">Contacto</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
+            <a href="#servicios" class="hover:text-yellow-400 transition-colors">Servicios</a>
+            <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
         </div>
+        <button id="menu-btn" class="md:hidden text-2xl">☰</button>
     </div>
+</nav>
+
+<!-- Menú móvil -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-6 space-y-4">
+        <button id="close-menu" class="text-2xl w-full text-right">×</button>
+        <a href="#inicio" class="block py-2">Inicio</a>
+        <a href="#servicios" class="block py-2">Servicios</a>
+        <a href="#contacto" class="block py-2">Contacto</a>
+    </div>
+</div>
 
     <!-- Hero Section con parallax -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-[url('assets/banner-repair.webp')] bg-fixed bg-cover bg-center">
