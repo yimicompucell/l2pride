@@ -246,6 +246,7 @@
         const closeBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOverlay = document.getElementById('menu-overlay');
+        const navbar = document.querySelector('nav');
     
         // Función para alternar el menú
         const toggleMenu = () => {
@@ -255,9 +256,9 @@
         }
     
         // Event listeners para el menú
-        menuBtn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
+        [menuBtn, closeBtn, menuOverlay].forEach(element => {
+            element.addEventListener('click', toggleMenu);
+        });
     
         // Cerrar menú con tecla ESC
         document.addEventListener('keydown', (e) => {
@@ -267,17 +268,11 @@
         });
     
         // Navbar con efecto de scroll
-        const navbar = document.querySelector('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.remove('bg-blue-900/95');
-                navbar.classList.add('bg-blue-900');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.add('bg-blue-900/95');
-                navbar.classList.remove('bg-blue-900');
-            }
+            const shouldAddShadow = window.scrollY > 100;
+            navbar.classList.toggle('shadow-lg', shouldAddShadow);
+            navbar.classList.toggle('bg-blue-900/95', !shouldAddShadow);
+            navbar.classList.toggle('bg-blue-900', shouldAddShadow);
         });
     
         // Smooth scroll para los enlaces
@@ -289,7 +284,7 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
-                
+    
                 // Cerrar menú móvil si está abierto
                 if (!mobileMenu.classList.contains('translate-x-full')) {
                     toggleMenu();
@@ -309,9 +304,7 @@
         });
     
         // Observar todas las cards de servicios
-        document.querySelectorAll('.service-card').forEach(card => {
-            observer.observe(card);
-        });
+        document.querySelectorAll('.service-card').forEach(observer.observe);
     </script>
     <script src="js/logopage.js"></script>
 </body>

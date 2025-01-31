@@ -13,8 +13,8 @@ function updateFavicon() {
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     favicon.href = darkMode 
-        ? '/assets/logo.webp'   // Favicon para modo claro
-        : '/assets/logo.webp';   // Favicon para modo oscuro
+        ? '/assets/logo.png'   // Favicon para modo claro
+        : '/assets/logo.png';   // Favicon para modo oscuro
 }
 
 // Llama a la función al cargar la página
